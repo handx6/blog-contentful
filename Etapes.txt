@@ -1,0 +1,9 @@
+Projet avec Nextjs 
+////////////////////////////////////////////////////////////////
+
+1. Create projet npx create-next-app@latest
+2. install contentful dependance => npm i contentful
+3. Create content-type sur contentful
+4. Create content in contentful
+5. Connexion avec mes clés API contentful => settings => API keys => add API key
+6. Create .env.local and add contentful API keys
