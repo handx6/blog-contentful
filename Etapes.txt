@@ -7,3 +7,9 @@ Projet avec Nextjs
 4. Create content in contentful
 5. Connexion avec mes clés API contentful => settings => API keys => add API key
 6. Create .env.local and add contentful API keys
+
+
+
+Pour le rich text:
+////////////////////////////////////////////////////////////////
+=> npm i @contentful/rich-text-react-renderer

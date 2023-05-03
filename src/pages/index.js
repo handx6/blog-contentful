@@ -9,7 +9,7 @@ export default function Home({posts}) {
   return (
     <>
       <Layout>
-        <h1>Home</h1>
+        
         {posts.map((post) =>(
           <Card key={post.sys.id} post={post}/>
         ))}
