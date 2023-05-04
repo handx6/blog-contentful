@@ -1,17 +1,12 @@
 import Image from 'next/image'
 import Layout from '@/components/layout/Layout';
 import { createClient } from 'contentful';
-import Card from '@/components/cards/Card';
-
+import PostList from '@/components/PostList';
 export default function Home({posts, postsFooter}) {
   return (
     <>
       <Layout page="Home" postsFooter={postsFooter}>
-        <section id="posts">
-          {posts.map((post) => (
-            <Card key={post.sys.id} post={post} />
-          ))}
-        </section>
+        <PostList posts={posts} />     
       </Layout>
     </>
   );
@@ -29,7 +24,6 @@ export async function getStaticProps() {
   const data = await client.getEntries({
     content_type: "escciBlog",
     order: "sys.createdAt",
-    limit: 8,
   });
 
   const postsFooter = await client.getEntries({

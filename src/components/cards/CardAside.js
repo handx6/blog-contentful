@@ -8,7 +8,7 @@ export default function CardAside({ post }) {
     const { title, featuredImage, slug, author, createdAt } = post.fields
     const imgUrl = 'https:' + featuredImage.fields.file.url;
    
-   console.log(slug)
+
     return (
       <div className="pb-6">
         <Link href={slug}>

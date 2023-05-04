@@ -63,7 +63,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Index({ post, postsFooter, postsAside }) {
-  console.log(postsAside);
   const { title, content, featuredImage } = post.fields;
   const urlImg = "https:" + featuredImage.fields.file.url;
   return (

@@ -6,7 +6,6 @@ export default function CardFooter({ post }) {
     const { title, featuredImage, slug, author, createdAt } = post.fields
     const imgUrl = 'https:' + featuredImage.fields.file.url;
    
-   console.log(createdAt)
     return (
       <div className="pb-6">
         <Link href={`posts/${slug}`}>
