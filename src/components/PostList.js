@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Card from "@/components/cards/Card";
-import Pagination from "@/components/Pagination";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Pagination } from "@nextui-org/react";
+// 
+
+
 import GetList from "./GetList";
 
 export default function PostList({ posts }) {
@@ -18,8 +19,13 @@ export default function PostList({ posts }) {
   posts = pagesData[currentPage];
   return (
     <section id="posts" className="p-4 sm:px-20 md:px-32 sm:py-6 ">
-      <GetList posts={posts}/>
-        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} posts={posts} pagesData={pagesData}/>
+      <GetList posts={posts} />
+      <div className="flex justify-center">
+        <Pagination rounded color="warning" total={pageCount} initialPage={1} onChange={(page) => (
+          setCurrentPage(page - 1)
+        )} />
+      </div>
+      {/* <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} posts={posts} pagesData={pagesData}/> */}
       {/* <div className="py-20 flex space-x-1 items-center justify-center">
         <div
           className="rounded-full border border-gray-300 hover:text-white hover:bg-gray-600"

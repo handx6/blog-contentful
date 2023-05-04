@@ -5,3 +5,7 @@
 .bg-hero {
     background-image: linear-gradient(200deg, rgba(251, 172, 128, 0.9) 0%, rgba(250, 129, 194, 0.5) 50%, rgba(247, 83, 245, 0.8) 100%), url('img/bg_1.jpg')
 }
+
+.nextui-c-cAbbLF {
+    background: #FFD368;
+}
