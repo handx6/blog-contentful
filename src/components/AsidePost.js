@@ -3,7 +3,6 @@ import { BiSearch } from "react-icons/bi";
 import CardAside from './cards/CardAside';
 
 export default function AsidePost({posts}) {
-  console.log(posts);
   return (
     <aside className="w-full lg:w-2/5 pt-8 lg:pt-1 ">
       <form action="">
