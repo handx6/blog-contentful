@@ -1,8 +1,8 @@
 import React from "react";
 import { createClient } from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Layout from "@/components/layout/Layout";
-
+import CardSinglePost from "@/components/cards/CardSinglePost";
+import AsidePost from "@/components/AsidePost";
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFULL_SPACE_ID,
@@ -43,23 +43,36 @@ export async function getStaticProps({ params }) {
 
   // B - Stocke la data du post dans une variable
   const post = res.items;
-  console.log(post);
+
+  const postsFooter = await client.getEntries({
+    content_type: "escciBlog",
+    limit: 2,
+  });
+  const postsAside = await client.getEntries({
+    content_type: "escciBlog",
+    limit: 3,
+  });
+
   return {
     props: {
       post: post[0],
+      postsFooter: postsFooter.items,
+      postsAside: postsAside.items,
     },
   };
 }
 
-export default function Index({ post }) {
+export default function Index({ post, postsFooter, postsAside }) {
+  console.log(postsAside);
   const { title, content, featuredImage } = post.fields;
   const urlImg = "https:" + featuredImage.fields.file.url;
   return (
     <>
-      <Layout>
-        <h1 className="text-xl font-bold">{title}</h1>
-        <img src={urlImg} alt={title} />
-        <div>{documentToReactComponents(content)}</div>
+      <Layout page={["Home", "Blog", "Blog Single"]} postsFooter={postsFooter}>
+        <div className="sm:px-20 md:px-32 sm:py-6 p-4 block lg:flex lg:space-x-6">
+          <CardSinglePost title={title} content={content} urlImg={urlImg} />
+          <AsidePost posts={postsAside} />
+        </div>
       </Layout>
     </>
   );

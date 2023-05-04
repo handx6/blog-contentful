@@ -3,13 +3,13 @@ import Navbar from '../navigation/Navbar'
 import Footer from '../footer/Footer'
 import Hero from './Hero';
 
-export default function Layout({ children, heroInfo }) {
+export default function Layout({ children, page, postsFooter }) {
   return (
-    <>
+    <div className='scroll-smooth'>
       <Navbar />
-         <Hero />
+         <Hero page={page}/>
          <main>{children}</main>
-      <Footer />
-    </>
+      <Footer posts={postsFooter}/>
+    </div>
   );
 }

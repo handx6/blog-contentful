@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <>
       <>
-        <Layout>
+        <Layout page="Contact">
           <h1>Contact</h1>
         </Layout>
       </>

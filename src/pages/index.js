@@ -1,18 +1,17 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Layout from '@/components/layout/Layout';
 import { createClient } from 'contentful';
 import Card from '@/components/cards/Card';
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({posts}) {
+export default function Home({posts, postsFooter}) {
   return (
     <>
-      <Layout>
-        
-        {posts.map((post) =>(
-          <Card key={post.sys.id} post={post}/>
-        ))}
+      <Layout page="Home" postsFooter={postsFooter}>
+        <section id="posts">
+          {posts.map((post) => (
+            <Card key={post.sys.id} post={post} />
+          ))}
+        </section>
       </Layout>
     </>
   );
@@ -33,10 +32,15 @@ export async function getStaticProps() {
     limit: 8,
   });
 
+  const postsFooter = await client.getEntries({
+    content_type: "escciBlog",
+    limit: 2,
+  });
   // 3 - on envoie la data dans les props
   return {
     props: {
-      posts: data.items
+      posts: data.items,
+      postsFooter: postsFooter.items,
     },
   };
 }

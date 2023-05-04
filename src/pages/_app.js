@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }) {
       <style jsx global>{`
         html {
           font-family: ${poppins.style.fontFamily};
+          scroll-behavior: smooth;
         }
       `}</style>
       <Component {...pageProps} />
