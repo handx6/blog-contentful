@@ -63,13 +63,13 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Index({ post, postsFooter, postsAside }) {
-  const { title, content, featuredImage } = post.fields;
+  const { title, content, featuredImage, createdAt } = post.fields;
   const urlImg = "https:" + featuredImage.fields.file.url;
   return (
     <>
       <Layout page={["Home", "Blog", "Blog Single"]} postsFooter={postsFooter}>
         <div className="sm:px-20 md:px-32 sm:py-6 p-4 block lg:flex lg:space-x-6">
-          <CardSinglePost title={title} content={content} urlImg={urlImg} />
+          <CardSinglePost title={title} content={content} urlImg={urlImg} createdAt={createdAt} />
           <AsidePost posts={postsAside} />
         </div>
       </Layout>

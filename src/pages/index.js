@@ -23,7 +23,7 @@ export async function getStaticProps() {
   // 2 - Récupérer data en cas de succès pour le content type => escciBlog
   const data = await client.getEntries({
     content_type: "escciBlog",
-    order: "sys.createdAt",
+    order: "-fields.createdAt",
   });
 
   const postsFooter = await client.getEntries({

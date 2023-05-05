@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## create your env.local
+NEXT_PUBLIC_CONTENTFULL_SPACE_ID=<your space id>
+NEXT_PUBLIC_CONTENTFULL_ACCESS_TOKEN=<your key>
+
+content_type is escciBlog
+model has :
+ - Created at : date
+ - Title (required): text
+ - Slug (required): text
+ - Excerpt (required): text
+ - Content (required): rich text
+ - Featured Images (required): Image
+
 ## Getting Started
 
 First, run the development server:

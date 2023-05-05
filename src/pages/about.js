@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import Layout from '@/components/layout/Layout';
 import { createClient } from 'contentful';
 import Welcome from '@/components/about/Welcome';
+import Testimonial from '@/components/about/Testimonial';
+
 
 export async function getStaticProps() {
   const client = createClient({
@@ -25,7 +27,11 @@ export default function About({postsFooter}) {
     <>
         <Layout page={["Home", "About"]} postsFooter={postsFooter}>
           <Welcome/>
+          <Testimonial />
         </Layout>
     </>
   );
 }
+
+
+

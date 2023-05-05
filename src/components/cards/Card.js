@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from 'next/link';
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { format, intlFormat } from "date-fns";
+import { format } from "date-fns";
 
 export default function Card({ post }) {
     const { title, excerpt, featuredImage, slug, createdAt } = post.fields
     var imgUrl = 'https:' + featuredImage.fields.file.url;
     const date = new Date(createdAt);
-    // Request a weekday along with a long date
+    
     const optionsMonth = {
       month: "long",
     };

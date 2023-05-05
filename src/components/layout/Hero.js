@@ -28,8 +28,10 @@ export default function Hero({ page }) {
     return (
       <>
         <div className="h-[calc(100vh_-_68px)] md:h-[60vh] bg-cover bg-center bg-hero flex flex-col justify-end">
-          <h1 className="text-5xl sm:text-7xl lg:text-9xl text-white font-bold text-center pb-8">
-            {page[page.length - 1]}
+          <h1 className="text-4xl sm:text-7xl lg:text-9xl text-white font-bold text-center pb-8">
+            {page[page.length - 1] === "Contact"
+              ? "Contact us"
+              : page[page.length - 1]}
           </h1>
           <div className="flex items-center justify-center space-x-4 pb-8">
             {page.map((item, index) => {

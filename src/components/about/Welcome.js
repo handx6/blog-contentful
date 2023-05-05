@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AiFillCaretRight } from "react-icons/ai";
 import { dataTabs } from '@/data/dataAbout';
+import CardTitlesAbout from '../cards/CardTitlesAbout';
 
 export default function Welcome() {
   const [isSelected, setisSelected] = useState(0);
@@ -22,12 +23,13 @@ export default function Welcome() {
         </div>
 
         <div className="pt-8 md:flex md:flex-col md:justify-center md:-w-1/2">
-          <h5 className="text-xs font-semibold text-gray-300 pb-1">
-            Welcome to Readit
-          </h5>
-          <h2 className="text-xl font-bold text-black pb-4">
-            We give you the best articles you want.
-          </h2>
+          <CardTitlesAbout
+            titleGray="Welcome to Readit"
+            titleBlack="We give you the best articles you want."
+            style="text-left"
+          />
+          <h5 className="text-xs font-semibold text-gray-300 pb-1"></h5>
+          <h2 className="text-xl font-bold text-black pb-4"></h2>
           <p className="text-xs font-light text-gray-500 pb-5">
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia
