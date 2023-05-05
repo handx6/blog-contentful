@@ -12,7 +12,7 @@ export default function AsidePost({posts}) {
             placeholder="Type a keyword and hit enter"
             className="w-full text-sm px-3 py-2 placeholder-gray-400 text-gray-500 rounded-lg border-none ring-2 ring-gray-300"
           />
-          <div className="absolute right-1 md:hidden lg:block ">
+          <div className="absolute right-1  ">
             <BiSearch className="text-gray-500 w-5 h-5  pointer-events-none" />
           </div>
         </div>
