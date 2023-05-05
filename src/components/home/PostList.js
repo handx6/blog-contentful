@@ -21,7 +21,7 @@ export default function PostList({ posts }) {
   return (
     <section id="posts" className="p-4 sm:px-20 md:px-32 sm:py-6 ">
       <GetList posts={postsToSend} />
-      <div className="flex justify-center">
+      <div className="flex justify-center py-20">
         <Pagination rounded color="warning" total={pageCount} initialPage={1} onChange={(page) => (
           setCurrentPage(page - 1)
         )} />
