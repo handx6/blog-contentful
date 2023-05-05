@@ -7,7 +7,7 @@ export default function Hero({ page }) {
   if (page === "Home") {
     return (
       <>
-        <div className="h-[calc(100vh_-_68px)] md:h-[60vh] bg-cover bg-center bg-hero flex flex-col justify-center text-white p-4 sm:px-20 md:px-32 sm:py-6">
+        <div className="h-[calc(100vh_-_68px)] md:h-screen bg-cover bg-center bg-hero flex flex-col justify-center text-white p-4 sm:px-20 md:px-32 sm:py-6">
           <h4 className="text-md pb-4">Hello! Welcome to</h4>
           <h1 className="text-5xl sm:text-7xl lg:text-9xl font-bold pb-6">
             Readit blog

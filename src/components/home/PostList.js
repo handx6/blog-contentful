@@ -11,12 +11,16 @@ export default function PostList({ posts }) {
 
   for (let i = 0; i < posts.length; i++) {
     const remainder = i % 9;
-    if (remainder === 0) {
+    if (posts.length - i - remainder === 0) {
+      pagesData.push(posts.slice(i, i + remainder));
+      break;
+    } else if (remainder === 0) {
       pagesData.push(posts.slice(i, i + 9));
     }
   }
   let pageCount = pagesData.length;
   posts = pagesData[currentPage];
+  console.log(pageCount);
   return (
     <section id="posts" className="p-4 sm:px-20 md:px-32 sm:py-6 ">
       <GetList posts={posts} />

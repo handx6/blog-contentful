@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Layout from '@/components/layout/Layout';
 import { createClient } from 'contentful';
-import PostList from '@/components/PostList';
+import PostList from '@/components/home/PostList';
 export default function Home({posts, postsFooter}) {
   return (
     <>

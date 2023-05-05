@@ -6,6 +6,15 @@
     background-image: linear-gradient(200deg, rgba(251, 172, 128, 0.9) 0%, rgba(250, 129, 194, 0.5) 50%, rgba(247, 83, 245, 0.8) 100%), url('img/bg_1.jpg')
 }
 
-.nextui-c-cAbbLF {
-    background: #FFD368;
+.centered-element-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.centered-element-big {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
 }
